@@ -102,16 +102,18 @@
     const f = filter.toLowerCase();
     tbody.innerHTML = data
       .filter(r => !f || r.provider.toLowerCase().includes(f) || r.model.toLowerCase().includes(f))
-      .map(r => `
-        <tr>
-          <td><span class="provider"><img class="logo" src="./assets/${r.logo}" alt="${r.provider}" onerror="this.style.visibility='hidden'">${r.provider}</span></td>
-          <td class="model">${r.model}</td>
+      .map(r => {
+        const isOnerall = r.provider === 'Onerall AI';
+        return `
+        <tr${isOnerall ? ' style="background:linear-gradient(90deg,rgba(255,140,26,.08),transparent)"' : ''}>
+          <td><span class="provider"><img class="logo" src="./assets/${r.logo}" alt="${r.provider}" onerror="this.style.visibility='hidden'">${r.provider}${isOnerall ? ' <span style="font-size:10px;background:linear-gradient(90deg,#ff8c1a,#ffd27a);color:#0a0a0b;border-radius:999px;padding:2px 8px;font-weight:600;letter-spacing:.04em;margin-left:6px;vertical-align:middle">FLAGSHIP</span>' : ''}</span></td>
+          <td class="model">${r.model}${isOnerall ? '<div style="font-size:11px;color:#8a8a93;font-weight:400;margin-top:2px">GLM 5.3 Flash base + GPT 5.6 Sol xhigh blend</div>' : ''}</td>
           <td class="price">$${r.input.toFixed(2)}</td>
           <td class="price">$${r.output.toFixed(2)}</td>
           <td class="ctx">${r.ctx}</td>
-          <td class="idx"><span class="idx-bar"><i style="width:${r.onerall_index}%"></i></span>${r.onerall_index}</td>
+          <td class="idx"><span class="idx-bar"><i style="width:${r.onerall_index}%${isOnerall ? ';background:linear-gradient(90deg,#ff8c1a,#ffd27a)' : ''}"></i></span>${r.onerall_index}</td>
         </tr>
-      `).join('');
+      `}).join('');
   }
   render();
   q.addEventListener('input', e => render(e.target.value));
