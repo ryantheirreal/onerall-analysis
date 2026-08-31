@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onerall Benchmark — Cost per model | Onerall Analysis AI</title>
+<meta name="description" content="Independent benchmark of LLM costs (input and output per 1M tokens) across OpenAI, Anthropic, Google, DeepSeek, Meta, xAI and others. Onerall Benchmark — cost per model, curated by Onerall Analysis AI.">
+<meta property="og:title" content="Onerall Benchmark — Cost per model">
+<meta property="og:description" content="Independent LLM cost benchmark. Compare input/output prices, context windows and the Onerall Index across 250+ models.">
+<meta property="og:url" content="https://analysis.onerall.com/benchmark/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Onerall Analysis AI">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../css/59592d20705592e3.css">
+<link rel="stylesheet" href="../css/a11f285c37ac4068.css">
+<link rel="stylesheet" href="../css/94121f75d7a13272.css">
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0a0a0b; color: #e8e8ea; margin: 0; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 96px; }
+  .back { color: #8a8a93; text-decoration: none; font-size: 13px; display: inline-flex; gap: 6px; align-items: center; margin-bottom: 24px; }
+  .back:hover { color: #e8e8ea; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.02em; }
+  h1 em { font-style: italic; color: #c9a3ff; }
+  .lede { color: #a0a0a8; font-size: 15px; max-width: 720px; margin: 0 0 32px; line-height: 1.55; }
+  .meta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; font-size: 12px; color: #8a8a93; }
+  .meta .pill { background: #1a1a1d; border: 1px solid #2a2a2f; border-radius: 999px; padding: 6px 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; font-weight: 500; color: #8a8a93; padding: 12px 14px; border-bottom: 1px solid #2a2a2f; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { padding: 14px; border-bottom: 1px solid #1a1a1d; }
+  tr:hover td { background: #141417; }
+  td.model { font-weight: 500; }
+  td.price { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  td.ctx { color: #8a8a93; font-size: 13px; }
+  td.idx { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .idx-bar { display: inline-block; width: 80px; height: 6px; background: #1a1a1d; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .idx-bar > i { display: block; height: 100%; background: linear-gradient(90deg, #6e4ad8, #c9a3ff); border-radius: 3px; }
+  img.logo { width: 20px; height: 20px; border-radius: 4px; vertical-align: middle; margin-right: 8px; }
+  .provider { display: inline-flex; align-items: center; color: #c4c4c8; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #1a1a1d; color: #6a6a73; font-size: 12px; text-align: center; }
+  footer a { color: #8a8a93; text-decoration: none; }
+  footer a:hover { color: #c9a3ff; }
+  .search { width: 100%; max-width: 360px; padding: 10px 14px; background: #141417; border: 1px solid #2a2a2f; border-radius: 8px; color: #e8e8ea; font-size: 14px; margin-bottom: 20px; }
+  .search:focus { outline: none; border-color: #6e4ad8; }
+  .grid-head { display: grid; grid-template-columns: 1fr auto auto auto auto auto; gap: 12px; align-items: center; }
+  @media (max-width: 720px) {
+    h1 { font-size: 30px; }
+    .grid-head, table { font-size: 12px; }
+    th:nth-child(6), td:nth-child(6) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../">← Back to Onerall Analysis</a>
+
+  <h1>Onerall <em>Benchmark</em></h1>
+  <p class="lede">Cost per model. Independent benchmark of LLM pricing across OpenAI, Anthropic, Google, DeepSeek, Meta, xAI and others. Updated weekly.</p>
+
+  <div class="meta">
+    <span class="pill" id="count-pill">— models</span>
+    <span class="pill">Sources: official provider pricing</span>
+    <span class="pill" id="updated-pill">Updated —</span>
+  </div>
+
+  <input id="q" class="search" placeholder="Filter by provider or model...">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Provider</th>
+        <th>Model</th>
+        <th>Input $ / 1M tok</th>
+        <th>Output $ / 1M tok</th>
+        <th>Context</th>
+        <th>Onerall Index</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <footer>
+    © 2026 Onerall · Analysis AI · <a href="../">analysis.onerall.com</a>
+  </footer>
+</div>
+
+<script>
+(async function () {
+  const data = await fetch('./data/models.json').then(r => r.json());
+  const tbody = document.getElementById('tbody');
+  const pill = document.getElementById('count-pill');
+  const updated = document.getElementById('updated-pill');
+  const q = document.getElementById('q');
+
+  pill.textContent = `${data.length} models`;
+  updated.textContent = 'Updated ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+  function render(filter = '') {
+    const f = filter.toLowerCase();
+    tbody.innerHTML = data
+      .filter(r => !f || r.provider.toLowerCase().includes(f) || r.model.toLowerCase().includes(f))
+      .map(r => `
+        <tr>
+          <td><span class="provider"><img class="logo" src="./assets/${r.logo}" alt="${r.provider}" onerror="this.style.visibility='hidden'">${r.provider}</span></td>
+          <td class="model">${r.model}</td>
+          <td class="price">$${r.input.toFixed(2)}</td>
+          <td class="price">$${r.output.toFixed(2)}</td>
+          <td class="ctx">${r.ctx}</td>
+          <td class="idx"><span class="idx-bar"><i style="width:${r.onerall_index}%"></i></span>${r.onerall_index}</td>
+        </tr>
+      `).join('');
+  }
+  render();
+  q.addEventListener('input', e => render(e.target.value));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  { "provider": "OpenAI",    "logo": "openai_small.svg",     "model": "GPT-4o",                  "input": 2.50, "output": 10.00, "ctx": "128k", "onerall_index": 78 },
+  { "provider": "OpenAI",    "logo": "openai_small.svg",     "model": "o1",                      "input": 15.00, "output": 60.00, "ctx": "200k", "onerall_index": 91 },
+  { "provider": "Anthropic", "logo": "anthropic_small.svg",  "model": "Claude Sonnet 4",         "input": 3.00, "output": 15.00, "ctx": "200k", "onerall_index": 89 },
+  { "provider": "Anthropic", "logo": "anthropic_small.svg",  "model": "Claude Haiku 3.5",        "input": 0.80, "output": 4.00, "ctx": "200k", "onerall_index": 72 },
+  { "provider": "Google",    "logo": "google_small.svg",     "model": "Gemini 2.5 Pro",          "input": 1.25, "output": 10.00, "ctx": "2M",  "onerall_index": 87 },
+  { "provider": "Google",    "logo": "google_small.svg",     "model": "Gemini 2.5 Flash",        "input": 0.15, "output": 0.60, "ctx": "1M",  "onerall_index": 70 },
+  { "provider": "DeepSeek",  "logo": "deepseek_small.svg",   "model": "DeepSeek V3",             "input": 0.27, "output": 1.10, "ctx": "64k", "onerall_index": 81 },
+  { "provider": "DeepSeek",  "logo": "deepseek_small.svg",   "model": "DeepSeek R1",             "input": 0.55, "output": 2.19, "ctx": "64k", "onerall_index": 85 },
+  { "provider": "Meta",      "logo": "meta_small.svg",       "model": "Llama 3.1 405B",          "input": 3.00, "output": 3.00, "ctx": "128k", "onerall_index": 76 },
+  { "provider": "Meta",      "logo": "meta_small.svg",       "model": "Llama 3.1 70B",           "input": 0.88, "output": 0.88, "ctx": "128k", "onerall_index": 68 },
+  { "provider": "Microsoft", "logo": "microsoft_small.svg",  "model": "MAI-DS-R1",               "input": 0.55, "output": 2.19, "ctx": "128k", "onerall_index": 83 },
+  { "provider": "Alibaba",   "logo": "alibaba_small.svg",    "model": "Qwen 2.5 Max",            "input": 0.40, "output": 1.60, "ctx": "128k", "onerall_index": 74 },
+  { "provider": "xAI",       "logo": "spacexai.svg",         "model": "Grok 3",                  "input": 3.00, "output": 15.00, "ctx": "131k", "onerall_index": 80 },
+  { "provider": "Cohere",    "logo": "cohere_small.svg",     "model": "Command R+",              "input": 2.50, "output": 10.00, "ctx": "128k", "onerall_index": 67 },
+  { "provider": "IBM",       "logo": "ibm_small.svg",        "model": "Granite 3.1 8B",          "input": 0.20, "output": 0.20, "ctx": "128k", "onerall_index": 52 },
+  { "provider": "Mistral",   "logo": "openai_small.svg",     "model": "Mistral Large 2",         "input": 2.00, "output": 6.00, "ctx": "128k", "onerall_index": 73 },
+  { "provider": "NVIDIA",    "logo": "nvidia_small.svg",     "model": "Llama 3.1 Nemotron 70B",  "input": 0.88, "output": 0.88, "ctx": "128k", "onerall_index": 71 },
+  { "provider": "AI21",      "logo": "ai21_small.svg",       "model": "Jamba 1.5 Large",         "input": 2.00, "output": 8.00, "ctx": "256k", "onerall_index": 69 }
+]
