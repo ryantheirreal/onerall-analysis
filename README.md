@@ -80,3 +80,20 @@ python scripts/rebrand.py --apply
 ## License
 
 Proprietary. Clone content © its respective owners; Onerall Benchmark data is curated by Onerall.
+
+## Commercial model
+
+Onerall Analysis now has a three-tier commercial model while the public leaderboards remain free:
+
+| Plan | Price | API allowance | Throughput |
+|---|---:|---:|---:|
+| **Pro** | $0/mo + $0.015/request | Pay per use | 60 RPM (1×) |
+| **Max** | $299/mo | 50,000 requests + $0.008 overage | 300 RPM (5×) |
+| **Scale** | $800/mo | 250,000 requests + $0.0045 overage | 1,200 RPM (20×) |
+
+- Pricing page: `/pricing`
+- Analysis API product page: `/api`
+- Machine-readable source of truth: `public/pricing/data/plans.json`
+- Authenticated API delivery is designed to run through `open.onerall.com/v1/analysis/*`
+
+The multipliers represent throughput/capacity, not an artificial discount claim.
