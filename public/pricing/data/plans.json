@@ -1,0 +1,81 @@
+{
+  "product": "Onerall Analysis",
+  "currency": "USD",
+  "billing_metric": "successful API request",
+  "public_access": "Public leaderboards and benchmark pages remain free.",
+  "plans": [
+    {
+      "id": "pro",
+      "name": "Pro",
+      "badge": "Pay per use",
+      "multiplier": "1x",
+      "monthly_price": 0,
+      "included_requests": 0,
+      "request_price": 0.015,
+      "overage_price": 0.015,
+      "rate_limit_rpm": 60,
+      "api_keys": 1,
+      "seats": 1,
+      "history_days": 7,
+      "features": [
+        "No monthly commitment",
+        "Latest model and provider data",
+        "Benchmark and pricing data",
+        "JSON API access",
+        "7-day history",
+        "Usage dashboard"
+      ]
+    },
+    {
+      "id": "max",
+      "name": "Max",
+      "badge": "5x",
+      "multiplier": "5x",
+      "monthly_price": 299,
+      "included_requests": 50000,
+      "request_price": null,
+      "overage_price": 0.008,
+      "rate_limit_rpm": 300,
+      "api_keys": 5,
+      "seats": 5,
+      "history_days": 90,
+      "features": [
+        "50,000 API requests included",
+        "5x Pro throughput",
+        "90-day performance history",
+        "CSV and JSON exports",
+        "Saved comparisons and watchlists",
+        "Model and provider alerts",
+        "Batch endpoints"
+      ]
+    },
+    {
+      "id": "scale",
+      "name": "Scale",
+      "badge": "20x",
+      "multiplier": "20x",
+      "monthly_price": 800,
+      "included_requests": 250000,
+      "request_price": null,
+      "overage_price": 0.0045,
+      "rate_limit_rpm": 1200,
+      "api_keys": 25,
+      "seats": 20,
+      "history_days": 730,
+      "features": [
+        "250,000 API requests included",
+        "20x Pro throughput",
+        "2-year performance history",
+        "Bulk CSV and JSON exports",
+        "Scheduled data delivery",
+        "Webhooks for benchmark changes",
+        "Priority data updates",
+        "Priority support"
+      ]
+    }
+  ],
+  "break_even": {
+    "max_vs_pro_requests_per_month": 19934,
+    "scale_vs_max_requests_per_month": 112625
+  }
+}
