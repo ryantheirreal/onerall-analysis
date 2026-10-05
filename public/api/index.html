@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis API — Onerall Analysis</title>
+<meta name="description" content="Programmatic access to Onerall Analysis model, provider, benchmark and pricing data through Onerall Open.">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#09090b;color:#efeff3;font-family:Inter,system-ui,sans-serif}.wrap{max-width:1060px;margin:auto;padding:28px 24px 90px}a{color:inherit}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:80px}.brand{font:400 22px Fraunces,serif;text-decoration:none}.brand em{color:#c9a3ff}.nav div{display:flex;gap:16px;align-items:center}.nav div a{font-size:13px;text-decoration:none;color:#9997a3}.nav div a:hover{color:#fff}.pill{font:600 11px JetBrains Mono,monospace;color:#c9a3ff;text-transform:uppercase;letter-spacing:.12em}h1,h2{font-family:Fraunces,serif;font-weight:400;letter-spacing:-.035em}h1{font-size:clamp(46px,7vw,78px);line-height:.96;margin:16px 0 22px;max-width:850px}h1 em,h2 em{color:#c9a3ff}.lede{color:#9b99a4;line-height:1.7;font-size:17px;max-width:760px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid #2b2b31;border-radius:9px;padding:11px 15px;text-decoration:none;font-size:13px;font-weight:600}.btn.primary{background:linear-gradient(135deg,#7d56e7,#c9a3ff);color:#09090b;border:0}.section{margin-top:88px}.section h2{font-size:44px;margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{border:1px solid #29292f;background:#111114;border-radius:16px;padding:22px}.card h3{margin:0 0 8px;font:500 18px Fraunces,serif}.card p{color:#9b99a4;font-size:13px;line-height:1.55}.code{margin-top:26px;border:1px solid #29292f;background:#0d0d10;border-radius:14px;padding:20px;overflow:auto;color:#d8d7dd;font:13px/1.7 JetBrains Mono,monospace}.muted{color:#9b99a4}.pricebar{margin-top:70px;border:1px solid #4e3970;border-radius:18px;padding:28px;background:radial-gradient(circle at 100% 0,rgba(201,163,255,.15),transparent 42%),#111114;display:flex;justify-content:space-between;gap:24px;align-items:center}.pricebar strong{font:400 34px Fraunces,serif}.pricebar p{color:#9b99a4;margin:8px 0 0}.note{margin-top:18px;color:#777580;font-size:12px;line-height:1.6}@media(max-width:720px){.grid{grid-template-columns:1fr}.nav{margin-bottom:55px}.pricebar{flex-direction:column;align-items:flex-start}.nav div a:first-child{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <a class="brand" href="../">Onerall <em>Analysis</em></a>
+    <div><a href="../benchmark/">Benchmark</a><a href="../pricing/">Pricing</a><a href="https://open.onerall.com">Open API ↗</a></div>
+  </div>
+
+  <div class="pill">Analysis API</div>
+  <h1>Benchmark intelligence,<br><em>ready for software.</em></h1>
+  <p class="lede">Use Onerall Analysis model, provider, pricing and benchmark data inside internal tooling, model routers, AI products and research pipelines. Analysis owns the dataset; authenticated delivery runs through Onerall Open.</p>
+  <div class="actions"><a class="btn primary" href="../pricing/">See pricing</a><a class="btn" href="https://open.onerall.com">Open developer platform ↗</a></div>
+
+  <section class="section">
+    <div class="pill">Data surfaces</div>
+    <h2>One dataset.<br><em>Several useful views.</em></h2>
+    <div class="grid">
+      <div class="card"><h3>Models</h3><p>Rankings, intelligence indices, context, modalities, pricing, latency and provider availability.</p></div>
+      <div class="card"><h3>Providers</h3><p>Provider-level comparisons, model coverage, speed, price and API characteristics.</p></div>
+      <div class="card"><h3>Benchmarks</h3><p>Normalized benchmark results and Onerall indices suitable for dashboards, routing logic and research.</p></div>
+      <div class="card"><h3>History</h3><p>Track how model, provider and pricing metrics move over time on Max and Scale.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="pill">Canonical API contract</div>
+    <h2>Built for <em>Open.</em></h2>
+    <p class="lede">The commercial contract is Analysis; the canonical authenticated API namespace belongs to <strong style="color:#eee">open.onerall.com</strong>. That keeps benchmark UX separate from infrastructure while sharing one identity and billing system.</p>
+    <pre class="code">GET https://open.onerall.com/v1/analysis/models
+GET https://open.onerall.com/v1/analysis/providers
+GET https://open.onerall.com/v1/analysis/benchmarks
+GET https://open.onerall.com/v1/analysis/models/{id}/history
+
+Authorization: Bearer onr_...</pre>
+    <p class="note">These routes define the target public contract for the authenticated Analysis API. The current public benchmark feed remains available separately on analysis.onerall.com.</p>
+  </section>
+
+  <div class="pricebar">
+    <div><strong>Pro starts at $0/month.</strong><p>$0.015 per successful request. Max is $299/month. Scale is $800/month.</p></div>
+    <a class="btn primary" href="../pricing/">Compare plans</a>
+  </div>
+</div>
+</body>
+</html>
