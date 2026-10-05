@@ -2,6 +2,11 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/pricing", "destination": "/pricing/index.html" },
+    { "source": "/api", "destination": "/api/index.html" },
+    { "source": "/benchmark", "destination": "/benchmark/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -19,6 +24,12 @@
     },
     {
       "source": "/benchmark/data/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=300" }
+      ]
+    },
+    {
+      "source": "/pricing/data/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=300" }
       ]
